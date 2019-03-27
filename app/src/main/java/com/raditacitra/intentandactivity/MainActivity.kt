@@ -19,9 +19,14 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, ImplisitIntentActivity::class.java))
         }
         btnPindahActivityIntentBundle.setOnClickListener {
-            val phoneNumber = "081327783279"
-            val dialPhoneIntent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:$phoneNumber"))
-            startActivity(dialPhoneIntent)
+           val intent:Intent = Intent(this, IntentBundleActivity::class.java)
+            intent.putExtra("NAMAKU", "Radita Citra")
+            intent.putExtra("ALAMATKU", "Semarang")
+            intent.putExtra("HOBIKU", "Eat,Sleep")
+            intent.putExtra("CITACITAKU", "PROGRAMMER")
+            intent.putExtra("FOTO", R.drawable.pi1)
+            intent.putExtra("EMAILKU", "citraraditha@gmail.com")
+            startActivity(intent)
         }
 
     }
